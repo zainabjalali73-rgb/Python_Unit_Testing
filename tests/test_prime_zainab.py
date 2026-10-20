@@ -1,6 +1,8 @@
 import pytest
 from maths.prime_check import is_prime
 
+pytestmark = pytest.mark.unit
+
 ERR = "is_prime\\(\\) only accepts positive integers"
 
 
