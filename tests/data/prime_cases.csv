@@ -1,0 +1,13 @@
+number,expected,category
+0,False,boundary
+1,False,boundary
+2,True,boundary
+3,True,boundary
+4,False,boundary
+5,True,small prime
+9,False,odd composite
+25,False,perfect square
+97,True,prime
+100,False,even
+7919,True,large prime
+7921,False,square of 89
