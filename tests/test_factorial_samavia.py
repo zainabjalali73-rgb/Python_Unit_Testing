@@ -151,3 +151,14 @@ def test_recursive_very_large_input_hits_recursion_limit():
 def test_both_implementations_agree_for_0_to_100():
     for n in range(101):
         assert factorial(n) == factorial_recursive(n)
+
+import csv
+
+def load_factorial_data():
+    with open("tests/data/factorial_data.csv") as f:
+        return [(int(r["n"]), int(r["expected"])) for r in csv.DictReader(f)]
+
+@pytest.mark.data_driven
+@pytest.mark.parametrize("n,expected", load_factorial_data())
+def test_factorial_csv(n, expected):
+    assert factorial(n) == expected
